@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Habits | The Grind</title>
+  <link rel="stylesheet" href="css/style.css?v=20261011-credly1">
+  <style>
+    .habit-pick{display:flex;align-items:center;gap:9px;color:#2f7657;font-size:14px;font-weight:bold;cursor:pointer}.habit-pick input{accent-color:#2f7657;width:18px;height:18px}.habit-card.is-selected{outline:2px solid #2f7657;background:#f1f8f4}.habit-card.is-active:after{content:"Already active";display:block;color:#2f7657;font-size:12px;margin-top:10px}.habit-art-large{width:100%;height:120px;object-fit:contain;margin-bottom:12px}.goal-choice{display:flex;align-items:center;justify-content:space-between;color:#718078;font-size:13px;margin:12px 0 18px}.goal-choice input{width:86px;padding:8px;border:1px solid #dbe4df;border-radius:8px;color:#18392d}.start-habits-box{max-width:1100px;margin:28px auto 0;padding:22px;background:#fff;border:1px solid #e2e9e4;border-radius:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.start-habits-box p{margin-right:auto;color:#718078}.start-habits-box .secondary-btn{padding:11px 18px}.custom-habit-section{max-width:1100px;margin:32px auto 0;padding:26px;background:#fff;border:1px solid #e2e9e4;border-radius:18px}.custom-habit-section h2{margin:0 0 3px}.custom-habit-section>div>p:last-child{color:#718078}.custom-habit-form{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:18px}.custom-habit-form>label,.custom-goal-row label{display:grid;gap:6px;color:#53665a;font-size:13px;font-weight:600}.custom-habit-form input[type=text],.custom-habit-form input[type=number],.custom-habit-form select{width:100%;padding:11px 12px;border:1px solid #dbe4df;border-radius:9px;background:#fff;color:#18392d;font:inherit}.custom-goal-row{display:flex;gap:12px}.custom-goal-row label{flex:1}.icon-picker{grid-column:1/-1;border:0;padding:0;margin:0}.icon-picker legend{color:#53665a;font-size:13px;font-weight:600;margin-bottom:8px}.icon-options{display:flex;flex-wrap:wrap;gap:9px}.icon-options label{cursor:pointer}.icon-options input{position:absolute;opacity:0}.icon-options span{width:46px;height:46px;border:1px solid #dbe4df;background:#f8faf8;border-radius:12px;display:grid;place-items:center;font-size:24px}.icon-options input:checked+span{border:2px solid #2f7657;background:#edf6ef}.custom-habit-form>button{justify-self:start}.habit-emoji{display:grid;place-items:center;font-size:28px}.habit-stack-art.habit-emoji{width:52px;height:52px;flex:0 0 52px;border-radius:14px;background:#e8f5e9}@media(max-width:600px){.start-habits-box{flex-direction:column;align-items:stretch}.start-habits-box p{margin:0}.custom-habit-section{padding:20px}.custom-habit-form{grid-template-columns:1fr}.icon-picker{grid-column:auto}.custom-habit-form>button{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="dashboard.html" class="logo"><img class="logo-mark" src="assets/grind-logo.png?v=1" alt="">The Grind</a>
+    <nav><a href="dashboard.html">Dashboard</a><a href="habits.html" class="active">Habits</a><a href="progress.html">Progress</a></nav>
+    <button class="profile-btn" onclick="logout()">Logout</button>
+  </header>
+  <main class="habits-page">
+    <div class="page-heading"><p class="eyebrow">CHOOSE YOUR CHALLENGES</p><h1>What habits do you want <span>to build?</span></h1><p>Select habits and set a daily goal for each. You can change goals later.</p></div>
+    <div class="habit-grid" id="habitChoices">
+      <article class="habit-card" data-habit="Study"><img class="habit-art-large" src="assets/study.svg?v=4" alt="Notebook and pencil"><h3>Study</h3><p>Build a steady study routine.</p><label class="goal-choice">Daily minutes <input id="goal-Study" type="number" min="1" max="10000" value="30"></label><label class="habit-pick"><input type="checkbox" value="Study"> Select this habit</label></article>
+      <article class="habit-card" data-habit="Exercise"><img class="habit-art-large" src="assets/exercise.svg?v=4" alt="Dumbbell"><h3>Exercise</h3><p>Move your body and stay active.</p><label class="goal-choice">Daily minutes <input id="goal-Exercise" type="number" min="1" max="10000" value="20"></label><label class="habit-pick"><input type="checkbox" value="Exercise"> Select this habit</label></article>
+      <article class="habit-card" data-habit="Drink Water"><img class="habit-art-large" src="assets/water.svg?v=4" alt="Reusable water bottle"><h3>Drink Water</h3><p>Track each glass throughout your day.</p><label class="goal-choice">Daily glasses <input id="goal-Drink-Water" type="number" min="1" max="10000" value="8"></label><label class="habit-pick"><input type="checkbox" value="Drink Water"> Select this habit</label></article>
+      <article class="habit-card" data-habit="Meditation"><img class="habit-art-large" src="assets/meditation.svg?v=4" alt="Meditation cushion and candle"><h3>Meditation</h3><p>Make space for a peaceful moment.</p><label class="goal-choice">Daily minutes <input id="goal-Meditation" type="number" min="1" max="10000" value="10"></label><label class="habit-pick"><input type="checkbox" value="Meditation"> Select this habit</label></article>
+      <article class="habit-card" data-habit="Reading"><img class="habit-art-large" src="assets/reading.svg?v=4" alt="Open book"><h3>Reading</h3><p>Read something useful every day.</p><label class="goal-choice">Daily minutes <input id="goal-Reading" type="number" min="1" max="10000" value="20"></label><label class="habit-pick"><input type="checkbox" value="Reading"> Select this habit</label></article>
+      <article class="habit-card" data-habit="Coding"><img class="habit-art-large" src="assets/coding.svg?v=4" alt="Laptop"><h3>Coding</h3><p>Practice your programming skills.</p><label class="goal-choice">Daily minutes <input id="goal-Coding" type="number" min="1" max="10000" value="30"></label><label class="habit-pick"><input type="checkbox" value="Coding"> Select this habit</label></article>
+    </div>
+    <section class="custom-habit-section">
+      <div><p class="eyebrow">MAKE IT YOURS</p><h2>Add your own habit</h2><p>Create a personal habit with its own icon and daily goal.</p></div>
+      <form id="customHabitForm" class="custom-habit-form" onsubmit="createCustomHabit(event)">
+        <label>Habit name <input id="customHabitName" type="text" maxlength="40" placeholder="e.g. Walk the dog" required></label>
+        <label>Category <input id="customHabitCategory" type="text" maxlength="24" placeholder="e.g. Health"></label>
+        <div class="custom-goal-row"><label>Daily goal <input id="customHabitTarget" type="number" min="1" max="10000" value="1" required></label><label>Unit <select id="customHabitUnit"><option value="times">times</option><option value="minutes">minutes</option><option value="glasses">glasses</option><option value="pages">pages</option><option value="steps">steps</option><option value="servings">servings</option></select></label></div>
+        <fieldset class="icon-picker"><legend>Choose an icon</legend><div class="icon-options"><label><input type="radio" name="customHabitIcon" value="🎯" checked><span>🎯</span></label><label><input type="radio" name="customHabitIcon" value="🚶"><span>🚶</span></label><label><input type="radio" name="customHabitIcon" value="💧"><span>💧</span></label><label><input type="radio" name="customHabitIcon" value="📚"><span>📚</span></label><label><input type="radio" name="customHabitIcon" value="🧘"><span>🧘</span></label><label><input type="radio" name="customHabitIcon" value="🍎"><span>🍎</span></label><label><input type="radio" name="customHabitIcon" value="🌱"><span>🌱</span></label><label><input type="radio" name="customHabitIcon" value="💤"><span>💤</span></label></div></fieldset>
+        <button class="primary-btn" type="submit">＋ Add My Habit</button>
+      </form>
+    </section>
+    <div class="start-habits-box"><p id="selectionMessage" aria-live="polite">Set your daily goals and select one or more habits.</p><button class="primary-btn" onclick="startSelectedHabits()">Start Selected Habits →</button></div>
+  </main>
+  <script src="js/backend-config.js?v=1"></script><script src="js/app.js?v=20261014-backend1"></script>
+</body>
+</html>
